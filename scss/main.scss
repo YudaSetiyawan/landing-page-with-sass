@@ -1,0 +1,100 @@
+@import 'fonts';
+@import 'mixins'; 
+@import 'variables';
+
+// styles
+body{
+    font-family: 'Montserrat', sans-serif;
+    &::before{
+        content: '';    
+        background-image: url(../img/bg.png);
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 65vmax;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -9999;
+        @media screen and (max-width:992px){
+            opacity: 0.8;
+        }
+    }
+
+}
+
+// navigation/nav
+.navbar-custom{
+  .navbar-brand{
+        img{
+            width: 30px;
+        }
+        span{
+            color: $optionalColor;
+            font-weight: 700;
+            margin-left: 1em;
+        }
+    } 
+    #navbarNav{
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    color: $secondaryColor;
+                    font-weight: 400;
+                    margin-left: 2em;
+                    transition: .3s color ease;
+                    &:hover{
+                        color: darken($secondaryColor, $amount: 80%);
+                    }
+                } 
+                .sign-up-botton{
+                    @include tombol;
+                }
+            }
+        }
+    }
+}
+
+// custom-section
+.custom-section{
+    margin-top: 5em;
+    h2{
+        font-weight: 700;
+        font-size: 4.5em;
+        color: $optionalColor;
+        line-height: 1;
+    }
+    h3{
+        font-weight: 400;
+        color: $primaryColor;
+        font-size: 2em;
+        line-height: 1;
+    }
+    p{
+        font-size: 1.1em;
+        color: $tersierColor;
+        margin-top: 4em;
+        line-height: 1.5;
+
+    }
+    a{
+        @include tombol;
+        margin-top: 1.2em;
+        &:hover{
+            color: $primaryColor;
+            background-color:transparent;
+            border: 1px solid $primaryColor;
+        }
+    }
+    @media screen and (max-width:992px){
+        margin-top: 3em;
+        text-align: center;
+        line-height: 1;
+        h2, h3{
+            text-shadow: 1px 1px 2px rgba($secondaryColor, $alpha: .9);
+        }
+    }
+}
+
+  
